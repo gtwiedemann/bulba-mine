@@ -22,7 +22,7 @@ function App() {
     };
 
     React.useEffect(() => {
-        createSquares(19);
+        createSquares(18);
     }, []);
 
     const [squares, setSquares] = React.useState([]);
