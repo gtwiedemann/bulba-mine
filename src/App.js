@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Square from "./components/square/Square.jsx";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [squaresData, setSquaresData] = React.useState([]);
+
+    const createSquares = (size) => {
+        let rowArray = [];
+        let squareArray = [];
+        for (let i = 0; i <= size; i++) {
+            squareArray = [];
+            for (let j = 0; j <= size; j++) {
+                squareArray.push(
+                    <Square key={`R${i}C${j}`} id={`R${i}C${j}`} />
+                );
+            }
+            rowArray.push(<div className="row-container">{squareArray} </div>);
+        }
+
+        setSquares(rowArray);
+    };
+
+    React.useEffect(() => {
+        createSquares(19);
+    }, []);
+
+    const [squares, setSquares] = React.useState([]);
+
+    return (
+        <div className="App">
+            <div className="screen-container">{squares}</div>
+        </div>
+    );
 }
 
 export default App;

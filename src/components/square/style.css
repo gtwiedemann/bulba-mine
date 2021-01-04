@@ -1,0 +1,11 @@
+.square-container {
+    width: 23px;
+    height: 23px;
+    background-color: teal;
+    border: 1px solid rgb(40, 40, 40);
+}
+
+.square-container:hover {
+    background-color: rgb(165, 129, 10);
+    border: 1px solid rgb(119, 0, 0);
+}
