@@ -2,23 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background-image: url("./images/background-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .screen-container {
-    height: 800px;
-    width: 800px;
-    background-color: slategrey;
-}
-
-.row-container {
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(150, 225, 65);
-    width: 100%;
-}
-
-.row-container:hover {
-    background-color: salmon;
+    height: 480px;
+    width: 480px;
+    background-color: rgba(100, 100, 100, 0.5);
+    position: relative;
 }

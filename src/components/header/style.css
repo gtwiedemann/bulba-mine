@@ -1,0 +1,39 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(200, 200, 200, 0.2);
+    height: 8rem;
+    width: 100%;
+}
+
+.pokeballs-counter-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 8rem;
+    height: 100%;
+}
+
+.pokeballs-counter-container label {
+    color: snow;
+    font-size: 1.4rem;
+}
+
+.header-container button {
+    background-color: rgba(100, 100, 100, 0.25);
+    height: 2rem;
+    width: 8rem;
+    color: snow;
+    font-size: 1.4rem;
+}
+
+.bulba-container {
+    height: 100%;
+}
+
+.bulba-container img {
+    height: 100%;
+    margin: 0 1rem;
+}

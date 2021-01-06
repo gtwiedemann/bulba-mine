@@ -1,11 +1,21 @@
 .square-container {
     width: 38px;
     height: 38px;
-    background-color: rgb(80, 80, 80);
-    border: 1px solid rgb(40, 40, 40);
-    box-shadow: 0px 0px 1px 2px rgb(40, 40, 40);
+    background-color: rgb(200, 200, 200);
+    box-shadow: 0px 0px 10px 2px rgb(70, 90, 70);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .square-container:hover {
-    background-color: rgb(165, 129, 10);
+    z-index: 1;
+    box-shadow: 0px 0px 5px 2px rgb(100, 180, 100);
+    background-color: rgb(180, 180, 180);
+}
+
+.square-container img {
+    width: 100%;
+    height: 100%;
 }
