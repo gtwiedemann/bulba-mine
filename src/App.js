@@ -3,28 +3,33 @@ import "./App.css";
 import Square from "./components/square/Square.jsx";
 import * as funcs from "./functions/createGame.js";
 import Header from "./components/header/Header.jsx";
+import bimage from "./images/bulbasaur-1.png";
 
 function App() {
     const [squaresData, setSquaresData] = React.useState([]);
-    const [counterPokeballs, setcounterPokeballs] = React.useState(50);
+    const [totalMines, setTotalMines] = React.useState(50);
+    const [mineCounter, setMineCounter] = React.useState(50);
 
     const setPokeball = (e) => {
-        setcounterPokeballs(counterPokeballs - 1);
+        setMineCounter(mineCounter - 1);
     };
 
     const removePokeball = (e) => {
-        setcounterPokeballs(counterPokeballs + 1);
+        setMineCounter(mineCounter + 1);
     };
 
     const resetGame = () => {
-        setSquaresData([]);
-        setcounterPokeballs(50);
-        setSquaresData(funcs.createSquaresDataArray(12));
-        console.log("reset");
+        setMineCounter(50);
+        let squareArray = [];
+        squareArray = funcs.createSquaresArray(12);
+        squareArray = funcs.insertMines(squareArray, totalMines);
+        // squareArray = funcs.insertNumbers(squareArray);
+        setSquaresData(squareArray);
+        // setSquaresData(funcs.insertMines(squaresData, totalMines));
     };
 
     React.useEffect(() => {
-        setSquaresData(funcs.createSquaresDataArray(12));
+        resetGame();
     }, []);
 
     return (
@@ -32,7 +37,7 @@ function App() {
             <div>
                 <div className="header-container">
                     <Header
-                        pokeballs={counterPokeballs}
+                        pokeballs={mineCounter}
                         resetGame={resetGame}
                     ></Header>
                 </div>
@@ -43,6 +48,8 @@ function App() {
                             id={item.id}
                             row={item.row}
                             column={item.column}
+                            mine={item.mine}
+                            number={item.number}
                             setPokeball={setPokeball}
                             removePokeball={removePokeball}
                         />
